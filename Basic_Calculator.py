@@ -1,3 +1,22 @@
+"""
+Basic Calculator in Python
+---------------------------
+This program is a command-line calculator that supports basic arithmetic operations:
+- Addition
+- Subtraction
+- Multiplication
+- Division
+
+How to Use:
+1. Run the program in a Python environment.
+2. Select an operation (A, B, C, D) when prompted.
+3. Enter two numbers to calculate the result.
+4. Enter 'E' to exit.
+
+Author: Adil Rahimov
+Date: 25.12.2024
+"""
+
 def add(a,b):
     answer = a+b
     print(str(a)+ " + " + str(b)+ " = " + str(answer))
