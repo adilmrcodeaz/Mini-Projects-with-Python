@@ -65,3 +65,6 @@ elif choice=="d" or choice=="D":
 elif choice =="e" or choice=="E":
     print("Program ended")
     quit()
+
+else:
+    print("Please input correct operation")
