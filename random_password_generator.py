@@ -1,3 +1,5 @@
+# This script creates a simple GUI application using Tkinter to generate and display random passwords.
+# Users can specify the desired password length, and the generated password is shown on the screen for easy copying.
 import random
 import string
 import tkinter as tk
