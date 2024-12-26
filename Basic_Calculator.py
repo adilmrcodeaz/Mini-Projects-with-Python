@@ -31,40 +31,51 @@ def mul(a,b):
     print(str(a)+ " * "+ str(b)+ " = " + str(answer))
 
 def div(a,b):
-    answer = a/b
-    print(str(a)+" / "+str(b)+ " = " + str(answer))
+    try:
+        if b == 0:
+            print("Error: Cannot divide by zero!")
+            return
+        answer = a/b
+        print(str(a)+" / "+str(b)+ " = " + str(answer))
+    except Exception as e:
+        print(f"An error occurred: {e}")
 
+def get_numbers():
+    try:
+        a = float(input("Please input first number: "))
+        b = float(input("Please input second number: "))
+        return a, b
+    except ValueError:
+        print("Error: Please enter valid numbers!")
+        return None, None
 
-print("A. Addition")
-print("B. Subtraction")
-print("C. Multiplication")
-print("D. Division")
-print("E. Exit")
+while True:
+    print("\nCalculator Menu:")
+    print("A. Addition")
+    print("B. Subtraction")
+    print("C. Multiplication")
+    print("D. Division")
+    print("E. Exit")
 
-choice = input("Plase,input your choice : ")
-if choice =="a" or choice == "A":
-    print("Addition")
-    a= int(input("Please,input first number: "))
-    b= int(input("Please,input second number: "))
-    add(a,b)
-elif choice =="b" or choice == "B":
-    print("Substraction")
-    a= int(input("Please,input first number: "))
-    b= int(input("Please,input second number: "))
-    sub(a,b)
-elif choice=="c" or choice=="C":
-    print("Multiplication")
-    a= int(input("Please,input first number: "))
-    b= int(input("Please,input second number: "))
-    mul(a,b)
-elif choice=="d" or choice=="D":
-    print("Division")
-    a= int(input("Please,input first number: "))
-    b= int(input("Please,input second number: "))
-    div(a,b)
-elif choice =="e" or choice=="E":
-    print("Program ended")
-    quit()
+    choice = input("Please input your choice: ").upper()
 
-else:
-    print("Please input correct operation")
+    if choice == 'E':
+        print("Program ended")
+        break
+
+    if choice not in ['A', 'B', 'C', 'D']:
+        print("Error: Please input correct operation (A/B/C/D/E)")
+        continue
+
+    a, b = get_numbers()
+    if a is None:  # If input was invalid
+        continue
+
+    if choice == 'A':
+        add(a,b)
+    elif choice == 'B':
+        sub(a,b)
+    elif choice == 'C':
+        mul(a,b)
+    elif choice == 'D':
+        div(a,b)
