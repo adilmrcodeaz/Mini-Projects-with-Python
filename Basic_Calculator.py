@@ -1,5 +1,5 @@
 """
-Basic Calculator in Python
+Basic Calculator with Python
 ---------------------------
 This program is a command-line calculator that supports basic arithmetic operations:
 - Addition
